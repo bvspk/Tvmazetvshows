@@ -1,0 +1,31 @@
+<div class="card">
+    <h5 class="card-header"> {{genre ? genre : 'Search Results:'}}</h5>
+    <p *ngIf="showsData.length == 0">No Results found!</p>
+    <div *ngIf="isLoading" class="loader"><span class="spinner-border text-primary"></span></div>
+    <div *ngIf="hasError" class="error">An unexpected error happend. Please try after sometime!</div>
+    <div class="row">
+        <div class="control left col-lg-1" *ngIf="showsData.length != 0">
+            <div class="tableCell">
+                <button  *ngIf="start > 0" type="button" class="btn btn-outline-info btn-sm"  (click)="prev()" > Prev </button>
+            </div>
+        </div>
+        <div class="thumbs col-lg-10">
+            <div class="flex-container">
+                <div class="data col-xs-3" *ngFor="let data of showsData | slice:start:end;">
+                    <div [ngClass]="!data.image ? 'no-image' : ''">
+                        <img [routerLink]="['/show-details', data.id]"  [src]="data.image ? data.image.medium : '/assets/no-poster.jpg'" />
+                        <p [routerLink]="['/show-details', data.id]" class="caption">{{data.name}}</p>
+                        <p>Average Rating: {{data.rating.average ? data.rating.average : 'NA'}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control right col-lg-1" *ngIf="showsData.length != 0">
+            <div class="tableCell">
+                <button  *ngIf="end < showsData.length-1" type="button" class="btn btn-outline-dark btn-sm" (click)="next()" > Next </button>
+            </div>
+        </div>
+    </div>
+  
+    </div>
+    

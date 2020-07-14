@@ -1,0 +1,15 @@
+
+<div class="search">
+    <input type="text" name="search" placeholder="Search" [(ngModel)]="searchData" (keyup)="searchEvent()" />
+</div>
+<div *ngIf="isLoading" class="loader"><span class="spinner-border text-primary"></span></div>
+<ng-container *ngIf="searchData">
+    <app-tvshow-list [searchResults]="searchResults"></app-tvshow-list>
+</ng-container>
+<ng-container *ngIf="!searchData">
+    <app-tvshow-list [genresType]="'Drama'" [searchResults]="dramaData"></app-tvshow-list>&nbsp;
+    <app-tvshow-list [genresType]="'Comedy'" [searchResults]="comedyData"></app-tvshow-list>&nbsp;
+    <app-tvshow-list [genresType]="'Action'" [searchResults]="actionData"></app-tvshow-list>&nbsp;
+    <app-tvshow-list [genresType]="'Sports'" [searchResults]="sportsData"></app-tvshow-list>&nbsp;
+</ng-container>
+

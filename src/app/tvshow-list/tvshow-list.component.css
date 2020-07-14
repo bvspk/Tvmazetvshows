@@ -1,0 +1,71 @@
+.alert {
+    text-align: center;
+}
+.data {
+    padding: 0;
+    text-align: center;
+}
+.data img {
+    width: 100%;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.data .caption {
+    margin-top: 5px;
+    margin-bottom: 0;
+    background-color: #d39e00;
+    color: white;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card{
+    background-color: #dee2e6;
+    width: 100%;
+}
+.card-header {
+    background-color: #adb5bd;
+}
+
+.data > div {
+    margin: 10px;
+    padding: 10px;
+}
+.control {
+    text-align: center;
+    display: table;
+}
+.tableCell{
+    font-size: 20px;
+    margin-top: 5px;
+    display: block;
+    cursor: pointer;
+}
+.control span {
+    font-size: 20px;
+    margin-top: 5px;
+    display: block;
+    cursor: pointer;
+}
+.flex-container {
+    display: flex;
+    z-index: 1000;
+}
+
+.data.caption :hover {
+    cursor: pointer;
+}  
+
+@media (max-width: 544px) {  
+  .data p {
+      font-size: 12px;
+  }
+  .data > div {
+    margin: 5px;
+    padding: 0px;
+  }
+}
+
