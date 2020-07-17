@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { ITvShows } from '../model/tvshow.interface';
 
 @Component({
   selector: 'app-tvshow-list',
@@ -6,13 +7,13 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
   styleUrls: ['./tvshow-list.component.css']
 })
 export class TvshowListComponent implements OnInit , OnChanges {
-  @Input() searchResults: any = [];
-  @Input() searchData: any = [];
+  @Input() searchResults: ITvShows[] = []
+  @Input() searchData: ITvShows[] = []
   @Input() genresType: string;
-  showsData: any = [];
-  dramaData: any = [];
-  sportsData: any = [];
-  comedyData: any  [];
+  showsData: ITvShows[] = []
+  dramaData: ITvShows[] = []
+  sportsData: ITvShows[] = []
+  comedyData: ITvShows[] = []
   start = 0;
   maxItems = 6;
   end = this.maxItems;
