@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
-import { ITvShows } from '../model/tvshow';
+import { ITvShows } from '../model/tvshow.interface';
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ShowsService } from '../services/shows.service';
+import { ITvShows } from '../model/tvshow.interface';
 @Component({
   selector: 'app-tvshow-details',
   templateUrl: './tvshow-details.component.html',
@@ -8,7 +9,7 @@ import { ShowsService } from '../services/shows.service';
 })
 export class TvshowDetailsComponent implements OnInit {
   id: any;
-  showDetails: any;
+  showDetails: ITvShows;
   displayDetails = false;
   hasError = false;
   isLoading = false;

@@ -8,6 +8,7 @@ import { TvshowDetailsComponent } from './tvshow-details/tvshow-details.componen
 import { TvshowListComponent } from './tvshow-list/tvshow-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,

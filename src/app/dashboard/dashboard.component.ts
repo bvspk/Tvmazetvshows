@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShowsService } from '../services/shows.service';
-import { ITvShows } from '../model/tvshow'
+import { ITvShows } from '../model/tvshow.interface';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,10 +12,10 @@ export class DashboardComponent implements OnInit {
   searchData = '';
   showsData: ITvShows[] = [];
   searchResults: any = [];
-  dramaData: any = [];
-  sportsData: any = [];
-  comedyData: any = [];
-  actionData: any = []
+  dramaData: ITvShows[] = [];
+  sportsData: ITvShows[] = [];
+  comedyData: ITvShows[] = [];
+  actionData: ITvShows[] = []
   isLoading: boolean = false;
   hasError: boolean = false;
   timer: any;

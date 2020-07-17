@@ -1,5 +1,6 @@
 <div>
-    <button class="background-test" type="button" class="btn btn-outline-success btn-sm" (click)="goHome()" >Back to Results</button>
+  <button class="background-test" type="button" class="btn btn-outline-success btn-sm" (click)="goHome()">Back to
+    Results</button>
 </div>
 <div *ngIf="isLoading" class="loader">
   <span class="spinner-border text-primary"></span>
@@ -7,13 +8,12 @@
 <div *ngIf="hasError" class="error">An error occurred. Please try again after sometime!</div>
 
 <main class="details-content">
-    <p class="poster" ><img [src]="showDetails?.image?.medium ? showDetails?.image?.medium : '/assets/no-poster.jpg'"></p>
-    <div class="details">
-      <h2 class="movie-name">{{showDetails?.name}}</h2>
-      <p class="show-summary" [innerHTML]="showDetails?.summary"></p>
-      <p ><b>Language</b>: {{showDetails?.language}}</p>
-      <p ><b>Premiered</b>: {{showDetails?.premiered | date}}</p>
-      <p ><b>Rating</b>:  {{showDetails?.rating.average ? showDetails?.rating.average : 'NA'}}</p>
-
-    </div>
-  </main>
+  <p class="poster"><img [src]="showDetails?.image?.medium ? showDetails?.image?.medium : '/assets/no-poster.jpg'"></p>
+  <div class="details">
+    <h2 class="movie-name">{{showDetails?.name}}</h2>
+    <p class="show-summary" [innerHTML]="showDetails?.summary"></p>
+    <p><b>Language</b>: {{showDetails?.language}}</p>
+    <p><b>Premiered</b>: {{showDetails?.premiered | date}}</p>
+    <p><b>Rating</b>: {{showDetails?.rating.average ? showDetails?.rating.average : 'NA'}}</p>
+  </div>
+</main>
