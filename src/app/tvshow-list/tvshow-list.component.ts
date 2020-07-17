@@ -10,10 +10,10 @@ export class TvshowListComponent implements OnInit , OnChanges {
   @Input() searchResults: ITvShows[] = []
   @Input() searchData: ITvShows[] = []
   @Input() genresType: string;
-  showsData: ITvShows[] = []
-  dramaData: ITvShows[] = []
-  sportsData: ITvShows[] = []
-  comedyData: ITvShows[] = []
+  showsData: any[] = []
+  dramaData: any[] = []
+  sportsData: any[] = []
+  comedyData: any[] = []
   start = 0;
   maxItems = 6;
   end = this.maxItems;
