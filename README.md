@@ -4,15 +4,15 @@ Description: This app will be useful for listing out a few popular TV shows base
 Used Karma & Jasmine for Unit testing.
 Used VScode as IDE for coding
 Used Bootstrap 4.0 for design
+Used RXJS to work with asynchronous data streams.
 
-# Installations -------------
+# Installation Angular/ CLI ----
 Angular
+npm install -g @angular/cli
+Please refer below url
+https://angular.io/cli
 This has some advantages.
-Please refer below urls
 
-https://angular.io/
-
-https://angular.io/docs
 
 # Project setup (loading/importing all required packages)
 Note: npm was installed on your system through a Node.js version manager.
@@ -28,6 +28,9 @@ Below command Compiles and minifies application for production deployment
 ng build
 Below command Test
 ng Test
+Below command for Lint and fixes files
+npm run lint
+
 # Project Guidelines -----
 File Naming Convention, Method Naming Convention, Component Naming Convention, variable, object declaration : camelCase : TypeCasting Example : getAllShows, getShows(), searchEvent etc.
 
