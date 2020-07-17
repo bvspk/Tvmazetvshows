@@ -14,7 +14,8 @@ https://angular.io/cli
 This has some advantages.
 
 
-# Project setup (loading/importing all required packages)
+# Project setup (importing all required packages)
+
 Note: npm was installed on your system through a Node.js version manager.
 
 Follow below steps to run the application
