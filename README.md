@@ -64,4 +64,12 @@ Coding Standards
 
 a. kabab-case: folder names, angular component directives, etc. b. camelCase: Angular component file names, js variables, objects, functions, css classes etc c. PascalCase: importing npm packages, components, services etc.
 Total application is responsive developed by using Bootstrap.
+
+# Project dependencies ------------
+
+bootstrap : The world's most popular front-end CSS library — Bootstrap v4. Please refer below url for more details: https://getbootstrap.com/docs/4.0/getting-started/introduction/
+
+@angular/cli-plugin-unit-jest: Run unit tests with Jasmine-Karma. Jasmine is a JavaScript testing framework that supports a software development practice called Behaviour-Driven Development, or BDD for short. It’s a specific flavour of Test-Driven Development (TDD). Please refer below url for more details: https://angular.io/guide/testing
+
+@Rxjs: Reactive programming is an asynchronous programming paradigm concerned with data streams and the propagation of change . Please refer below url for more details : https://angular.io/guide/rx-library
  
