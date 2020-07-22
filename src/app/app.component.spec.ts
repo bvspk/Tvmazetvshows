@@ -25,15 +25,4 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('tvshows');
   });
-
-  it('when use is in dev, getRedirectString should return the expected navigation string', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.getRedirectString("xxdevxx")).toContain('test');
-  })
-  it('when use is in not dev, getRedirectString should return the expected navigation string', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.getRedirectString("xxxx")).toContain('prod');
-  })
 });
