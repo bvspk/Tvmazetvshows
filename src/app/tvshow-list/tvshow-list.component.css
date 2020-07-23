@@ -10,12 +10,14 @@
     max-width: 200px;
     cursor: pointer;
 }
-
+.name {
+    font-weight: 500;
+}
 .data .caption {
     margin-top: 5px;
     margin-bottom: 0;
-    background-color: #d39e00;
-    color: white;
+    font-weight: bold;
+    color:  #d39e00;
     font-style: italic;
     padding: 2px;
     text-align: center;
@@ -23,11 +25,11 @@
 }
 
 .card{
-    background-color: #dee2e6;
+    background-color: #EFEFE7;
     width: 100%;
 }
 .card-header {
-    background-color: #adb5bd;
+    background-color: #3c948b;
 }
 
 .data > div {
@@ -61,7 +63,7 @@
 
 @media (max-width: 544px) {  
   .data p {
-      font-size: 12px;
+      font-size: 10px;
   }
   .data > div {
     margin: 5px;

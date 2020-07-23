@@ -1,34 +1,13 @@
-  .details-content {
-    position: relative;
-    display: flex;
-    z-index: 1000;
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    margin-bottom: 199px;
-  }
-  .details {
-    margin: 40px;
-    margin-top: -11px;
-  }
-  
-.btn{
-  margin-left: 999px;
+.background-test{
+  margin-top: 5px;
 }
-  .movie-name {
-    font-size: 2rem;
-  }
-  
-  .poster {
-    margin-bottom: auto;
-    border-style: double;
-  }
-  @media only screen and (max-width: 768px) {
-    .details-content {
-      flex-direction: column !important;
-      width: 90% !important;
-      height:100% !important;
-    }
-  
+
+p.image > img {
+  margin-top: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+.details-content {
+  display: table-cell;
+  align-items: center;
 }

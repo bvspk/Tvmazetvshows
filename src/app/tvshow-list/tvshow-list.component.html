@@ -11,11 +11,11 @@
         </div>
         <div class="thumbs col-lg-10">
             <div class="flex-container">
-                <div class="data col-xs-3" *ngFor="let data of showsData | slice:start:end;">
+                <div class="data col-sm-3" *ngFor="let data of showsData | slice:start:end;">
                     <div [ngClass]="!data.image ? 'no-image' : ''">
-                        <img [routerLink]="['/show-details', data.id]"  [src]="data.image ? data.image.medium : '/assets/no-poster.jpg'" />
-                        <p [routerLink]="['/show-details', data.id]" class="caption">{{data.name}}</p>
-                        <p>Average Rating: {{data.rating.average ? data.rating.average : 'NA'}}</p>
+                        <img [routerLink]="['/show-details', data?.id]"  [src]="data?.image ? data?.image?.medium : '/assets/no-poster.jpg'" />
+                        <p [routerLink]="['/show-details', data?.id]"  class="caption">{{data.name}}</p>
+                        <p class="name"> Rating: {{data.rating.average ? data.rating.average : 'NA'}}</p>
                     </div>
                 </div>
             </div>
@@ -26,6 +26,4 @@
             </div>
         </div>
     </div>
-  
     </div>
-    

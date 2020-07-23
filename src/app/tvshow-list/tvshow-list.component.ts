@@ -15,7 +15,7 @@ export class TvshowListComponent implements OnInit , OnChanges {
   sportsData: any[] = []
   comedyData: any[] = []
   start = 0;
-  maxItems = 6;
+  maxItems = 4;
   end = this.maxItems;
   genre: string;
   isLoading = false;

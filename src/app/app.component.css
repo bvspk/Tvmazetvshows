@@ -1,8 +1,20 @@
 .bck-grnd{
-    background-color: #dee2e6;
+    background-color: #EFEFE7;
     height: auto !important;
     min-height: 100%;
 }
-.hd-grnd {
+
+header {
     text-align: center;
+    background-color: #3F3F3F;
+    color: black;
 }
+a {
+    color: blanchedalmond;
+}
+footer {
+    padding: 16px 0;
+    background-color: #3C948B;
+    color: #fff;
+  }
+  

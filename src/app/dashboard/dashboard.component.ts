@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShowsService } from '../services/shows.service';
 import { ITvShows } from '../model/tvshow.interface';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,23 +19,27 @@ export class DashboardComponent implements OnInit {
   actionData: ITvShows[] = []
   isLoading: boolean = false;
   hasError: boolean = false;
-  timer: any;
   constructor(private shows: ShowsService) { }
 
   ngOnInit(): void {
     this.getShows();
   }
+
+  // Below function filter the Show Data based on genres
+  getFilteredData(genres: string): ITvShows[] {
+    return this.showsData.filter(item => item.genres.indexOf(genres) >= 0);
+  }
   // Below function fetches all the shows from tvmaze API and split data based on genre
   getShows() {
     this.isLoading = true;
-    this.shows.getAllShows().subscribe(
+    this.shows.getAllShows().pipe(debounceTime(1000)).subscribe(
       (data: ITvShows[]) => {
         this.showsData = data;
         this.showsData.sort((a, b) => a.rating.average > b.rating.average ? -1 : 1);
-        this.dramaData = this.showsData.filter(item => item.genres.indexOf('Drama') >= 0);
-        this.comedyData = this.showsData.filter(item => item.genres.indexOf('Comedy') >= 0);
-        this.sportsData = this.showsData.filter(item => item.genres.indexOf('Sports') >= 0);
-        this.actionData = this.showsData.filter(item => item.genres.indexOf('Action') >= 0);
+        this.dramaData =  this.getFilteredData('Drama');
+        this.comedyData = this.getFilteredData('Comedy');
+        this.sportsData = this.getFilteredData('Sports');
+        this.actionData = this.getFilteredData('Action');
         this.hasError = false;
       },
       (error) => {
@@ -49,18 +54,15 @@ export class DashboardComponent implements OnInit {
   searchEvent() {
     // Debounce Keyup event
     this.isLoading = true;
-    clearTimeout(this.timer);
-    this.timer = setTimeout(() => {
-      if (this.searchData) {
-        this.getSearchResults(this.searchData);
-      } else {
-        this.getShows();
-      }
-    }, 1000);
+    if (this.searchData) {
+      this.getSearchResults(this.searchData);
+    } else {
+      this.getShows();
+    }
   }
   // Below function fetches results for the text entered in Seach Input box
   getSearchResults(searchText: string) {
-    this.shows.search(searchText).subscribe(
+    this.shows.search(searchText).pipe(debounceTime(1000)).subscribe(
       (data: any) => {
         this.searchResults = data.map(item => item.show);
         this.hasError = false;

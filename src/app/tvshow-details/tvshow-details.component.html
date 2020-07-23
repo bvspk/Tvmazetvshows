@@ -1,19 +1,20 @@
-<div>
-  <button class="background-test" type="button" class="btn btn-outline-success btn-sm" (click)="goHome()">Back to
+<div class="background-test">
+  <button type="button" class="btn btn-outline-success btn-sm" (click)="goHome()">Back to
     Results</button>
 </div>
 <div *ngIf="isLoading" class="loader">
   <span class="spinner-border text-primary"></span>
 </div>
 <div *ngIf="hasError" class="error">An error occurred. Please try again after sometime!</div>
-
-<main class="details-content">
-  <p class="poster"><img [src]="showDetails?.image?.medium ? showDetails?.image?.medium : '/assets/no-poster.jpg'"></p>
-  <div class="details">
-    <h2 class="movie-name">{{showDetails?.name}}</h2>
-    <p class="show-summary" [innerHTML]="showDetails?.summary"></p>
-    <p><b>Language</b>: {{showDetails?.language}}</p>
-    <p><b>Premiered</b>: {{showDetails?.premiered | date}}</p>
-    <p><b>Rating</b>: {{showDetails?.rating.average ? showDetails?.rating.average : 'NA'}}</p>
-  </div>
-</main>
+<div class="details-content">
+  <p class="image"><img [src]="showDetails?.image.original"></p>
+  <p><b>Title</b>:{{showDetails?.name}}</p>
+  <p><b>Language</b>:{{showDetails?.language}}</p>
+  <p><b>Average Rating</b>:{{showDetails?.rating.average ? showDetails?.rating.average : 'NA'}}</p>
+  <p><b>Genre</b>:{{showDetails?.genres.join(', ')}}</p>
+  <p><b>Official site</b>: <span *ngIf="!showDetails?.officialSite">NA</span> <a *ngIf="showDetails?.officialSite"
+      [href]="showDetails.officialSite" target="_blank">{{showDetails?.officialSite}}</a></p>
+  <p><b>Premiered</b>: {{showDetails?.premiered | date:'MMM d, y'}}</p>
+  <p><b>Scheduled</b>: {{showDetails?.schedule.days.join(', ')}} at {{showDetails?.schedule.time}}</p>
+  <p [innerHTML]="showDetails?.summary"></p>
+</div>

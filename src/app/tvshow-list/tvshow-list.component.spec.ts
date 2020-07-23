@@ -61,37 +61,37 @@ describe('TvshowListComponent', () => {
     expect(component.showsData.length).toEqual(0);
   });
 
-  it('Calling Next method should increment start value and end value by 6', () => {
+  it('Calling Next method should increment start value and end value by 4', () => {
     component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     component.next();
-    expect(component.start).toEqual(6);
+    expect(component.start).toEqual(4);
   });
 
   it('Calling Next method beyond available data should reset end value to max length', () => {
-    component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15];
-    component.start = 12;
-    component.end = 15;
+    component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    component.start = 8;
+    component.end = 10;
     component.next();
-    expect(component.start).toEqual(18);
-    expect(component.end).toEqual(21);
+    expect(component.start).toEqual(12);
+    expect(component.end).toEqual(14);
   });
 
-  it('Calling Prev method should decrement start value and end value by 6', () => {
-    component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-    component.start = 6;
-    component.end = 12;
+  it('Calling Prev method should decrement start value and end value by 4', () => {
+    component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    component.start = 4;
+    component.end = 8;
     component.prev();
     expect(component.start).toEqual(0);
-    expect(component.end).toEqual(6);
+    expect(component.end).toEqual(4);
   });
 
   it('Calling Prev method beyond available data should reset start value to 0', () => {
     component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     component.start = 0;
-    component.end = 6;
+    component.end = 4;
     component.prev();
     expect(component.start).toEqual(0);
-    expect(component.end).toEqual(6);
+    expect(component.end).toEqual(4);
   });
 
 });
