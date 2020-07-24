@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   // Below function fetches all the shows from tvmaze API and split data based on genre
   getShows() {
     this.isLoading = true;
-    this.shows.getAllShows().pipe(debounceTime(1000)).subscribe(
+    this.shows.getAllShows().subscribe(
       (data: ITvShows[]) => {
         this.showsData = data;
         this.showsData.sort((a, b) => a.rating.average > b.rating.average ? -1 : 1);
