@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   dramaData: ITvShows[] = [];
   sportsData: ITvShows[] = [];
   comedyData: ITvShows[] = [];
-  actionData: ITvShows[] = []
+  actionData: ITvShows[] = [];
   isLoading: boolean = false;
   hasError: boolean = false;
   constructor(private shows: ShowsService) { }
@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
       (data: ITvShows[]) => {
         this.showsData = data;
         this.showsData.sort((a, b) => a.rating.average > b.rating.average ? -1 : 1);
-        this.dramaData =  this.getFilteredData('Drama');
+        this.dramaData = this.getFilteredData('Drama');
         this.comedyData = this.getFilteredData('Comedy');
         this.sportsData = this.getFilteredData('Sports');
         this.actionData = this.getFilteredData('Action');

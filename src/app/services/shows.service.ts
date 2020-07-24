@@ -14,8 +14,7 @@ export class ShowsService {
   constructor(
     private httpService: HttpService,
   ) {
-   
-   }
+  }
   // Below method fetches all shows from tvmaze API
   getAllShows(): Observable<any> {
     return this.httpService.get(environment.url + '/shows?page=1');

@@ -13,11 +13,11 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent,TvshowListComponent ],
-      imports: [ HttpClientTestingModule,FormsModule ],
+      declarations: [DashboardComponent, TvshowListComponent],
+      imports: [HttpClientTestingModule, FormsModule],
       providers: [HttpService, HttpClient]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -39,17 +39,18 @@ describe('DashboardComponent', () => {
     expect(component.comedyData.length).toBeGreaterThan(0);
     expect(component.sportsData.length).toBeGreaterThan(0);
   });
-  
+
   it('should return data display Rating ', () => {
     spyOn(HttpService.prototype, 'get').and.returnValue(of(JSON.parse(mockData)));
     component.getShows();
     spyOn(component.showsData, 'sort');
     component.showsData.sort((a, b) => a.rating.average > b.rating.average ? -1 : 1);
-    expect(component.showsData[0].rating.average ).toEqual(6.7);
+    expect(component.showsData[0].rating.average).toEqual(6.7);
     expect(component.dramaData.length).toBeGreaterThan(0);
     expect(component.comedyData.length).toBeGreaterThan(0);
     expect(component.sportsData.length).toBeGreaterThan(0);
-  });  
+  });
+
   it('should show error when we get error from API', () => {
     spyOn(HttpService.prototype, 'get').and.returnValue(throwError('error'));
     component.getShows();
@@ -68,7 +69,6 @@ describe('DashboardComponent', () => {
     expect(component.hasError).toBeTruthy();
   });
 
-  
 
   it('Should call getSearchResults method after some data entered and idle for 1sec', fakeAsync(() => {
     spyOn(HttpService.prototype, 'get').and.returnValue(of(JSON.parse(mockData)));

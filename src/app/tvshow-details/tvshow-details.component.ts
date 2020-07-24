@@ -13,9 +13,9 @@ export class TvshowDetailsComponent implements OnInit {
   displayDetails = false;
   hasError = false;
   isLoading = false;
-  routerNavigate:Router
+  routerNavigate: Router;
   constructor(
-    private route: ActivatedRoute,private router :Router,
+    private route: ActivatedRoute, private router: Router,
     private shows: ShowsService
   ) { }
 

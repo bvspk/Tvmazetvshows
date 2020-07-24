@@ -11,12 +11,12 @@ describe('TvshowListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TvshowListComponent],
-      imports :[RouterTestingModule],
+      imports: [RouterTestingModule],
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA
       ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -24,9 +24,8 @@ describe('TvshowListComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     component.searchText = 'blood';
-    component.searchResults= [];
-    component.genresType='';
-
+    component.searchResults = [];
+    component.genresType = '';
   });
 
   it('should create', () => {

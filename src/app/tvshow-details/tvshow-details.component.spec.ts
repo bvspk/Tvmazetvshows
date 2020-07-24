@@ -16,7 +16,6 @@ describe('TvshowDetailsComponent', () => {
   let component: TvshowDetailsComponent;
   let fixture: ComponentFixture<TvshowDetailsComponent>;
   let router: Router;
-  
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TvshowDetailsComponent],
@@ -62,5 +61,4 @@ describe('TvshowDetailsComponent', () => {
     fixture.debugElement.query(By.css('button')).triggerEventHandler('click', null);
     expect(onClickMock).toHaveBeenCalled();
   });
- 
 });
