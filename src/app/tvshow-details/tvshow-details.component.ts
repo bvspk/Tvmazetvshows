@@ -40,6 +40,6 @@ export class TvshowDetailsComponent implements OnInit {
     );
   }
   goHome() {
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigate(['/dashboard']);
   }
 }

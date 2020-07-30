@@ -26,6 +26,8 @@ describe('TvshowListComponent', () => {
     component.searchText = 'blood';
     component.searchResults = [];
     component.genresType = '';
+    component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] as any;
+
   });
 
   it('should create', () => {
@@ -61,13 +63,11 @@ describe('TvshowListComponent', () => {
   });
 
   it('Calling Next method should increment start value and end value by 4', () => {
-    component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     component.next();
     expect(component.start).toEqual(4);
   });
 
   it('Calling Next method beyond available data should reset end value to max length', () => {
-    component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     component.start = 8;
     component.end = 10;
     component.next();
@@ -76,7 +76,6 @@ describe('TvshowListComponent', () => {
   });
 
   it('Calling Prev method should decrement start value and end value by 4', () => {
-    component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     component.start = 4;
     component.end = 8;
     component.prev();
@@ -85,12 +84,10 @@ describe('TvshowListComponent', () => {
   });
 
   it('Calling Prev method beyond available data should reset start value to 0', () => {
-    component.showsData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     component.start = 0;
     component.end = 4;
     component.prev();
     expect(component.start).toEqual(0);
     expect(component.end).toEqual(4);
   });
-
 });

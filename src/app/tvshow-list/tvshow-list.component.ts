@@ -6,26 +6,22 @@ import { ITvShows } from '../model/tvshow.interface';
   templateUrl: './tvshow-list.component.html',
   styleUrls: ['./tvshow-list.component.css']
 })
-export class TvshowListComponent implements OnInit , OnChanges {
+export class TvshowListComponent implements  OnChanges {
   @Input() searchResults: ITvShows[] = []
   @Input() searchData: ITvShows[] = []
   @Input() genresType: string;
-  showsData: any[] = []
-  dramaData: any[] = []
-  sportsData: any[] = []
-  comedyData: any[] = []
-  start = 0;
-  maxItems = 4;
+  showsData: ITvShows[] = []
+  dramaData: ITvShows[] = []
+  sportsData: ITvShows[] = []
+  comedyData: ITvShows[] = []
+  start: number = 0;
+  maxItems: number = 4;
   end = this.maxItems;
   genre: string;
   isLoading = false;
   searchText: string;
   hasError = false;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
   // Receive input params from parent and store in assigned variables
   ngOnChanges(changes: any) {
     if (changes.searchData) {
@@ -51,5 +47,6 @@ export class TvshowListComponent implements OnInit , OnChanges {
   next() {
     this.start += this.maxItems;
     this.end += this.maxItems;
+    
   }
 }

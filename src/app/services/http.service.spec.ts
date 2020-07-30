@@ -17,20 +17,4 @@ describe('HttpService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
-  it('should return data', async(() => {
-    service.get('http://api.tvmaze.com/shows/1').subscribe(
-      (data) => {
-        expect(typeof(data)).toEqual('object');
-      }
-    );
-  }));
-  it('should return error', async(() => {
-    service.get('http://api.tvmaze.com/search/shows?page=1').subscribe(
-      () => {},
-      (error) => {
-        expect(typeof(error)).toEqual('object');
-      }
-    );
-  }));
 });

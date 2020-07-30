@@ -17,14 +17,14 @@ export class ShowsService {
   }
   // Below method fetches all shows from tvmaze API
   getAllShows(): Observable<any> {
-    return this.httpService.get(environment.url + '/shows?page=1');
+    return this.httpService.get(`${environment.url}/shows?page=1`);
   }
   // Below method fetch results based on the input text provided
   search(searchText: string): Observable<any> {
-    return this.httpService.get(environment.url + '/search/shows?q=' + searchText);
+    return this.httpService.get(`${environment.url}/search/shows?q=${searchText}`);
   }
   // Below method fetch details based on the show id provided
   getDetails(id: number): Observable<any> {
-    return this.httpService.get(environment.url + '/shows/' + id);
+    return this.httpService.get(`${environment.url}/shows/${id}`);
   }
 }

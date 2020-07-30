@@ -6,8 +6,8 @@ p.image > img {
   margin-top: 20px;
   max-width: 400px;
   width: 100%;
+  padding-right: 25px;
 }
-.details-content {
-  display: table-cell;
-  align-items: center;
+.details{
+  margin-top: 20px;
 }

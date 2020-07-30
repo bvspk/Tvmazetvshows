@@ -15,7 +15,9 @@ const mockData = '{"id":1,"url": "http://www.tvmaze.com/shows/1/under-the-dome",
 describe('TvshowDetailsComponent', () => {
   let component: TvshowDetailsComponent;
   let fixture: ComponentFixture<TvshowDetailsComponent>;
-  let router: Router;
+  let router = {
+    navigate: jasmine.createSpy('navigate')
+  }
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TvshowDetailsComponent],
@@ -26,7 +28,7 @@ describe('TvshowDetailsComponent', () => {
         provide: ActivatedRoute, Router, useValue: {
           paramMap: of(convertToParamMap({ id: 1 }))
         }
-      }]
+      },{ provide: Router, useValue: router }]
     })
       .compileComponents();
   }));
@@ -43,22 +45,18 @@ describe('TvshowDetailsComponent', () => {
   });
 
   it('should call API to get Show details', () => {
-
     spyOn(HttpService.prototype, 'get').and.returnValue(of(JSON.parse(mockData)));
     component.ngOnInit();
     expect(typeof (component.showDetails)).toBe('object');
   });
 
   it('should call API to get Show details', () => {
-
     spyOn(HttpService.prototype, 'get').and.returnValue(throwError('error'));
     component.ngOnInit();
     expect(component.hasError).toBeTruthy();
   });
   it('should call goHome method', () => {
-    const onClickMock = spyOn(component, 'goHome');
     component.goHome();
-    fixture.debugElement.query(By.css('button')).triggerEventHandler('click', null);
-    expect(onClickMock).toHaveBeenCalled();
+    expect(router.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
 });
